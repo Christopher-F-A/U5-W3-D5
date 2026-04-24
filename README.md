@@ -9,6 +9,9 @@ Gestione Eventi
 
 ![ERD for DB.png](assets/ERD%20for%20DB.png)
 
+• POSTMAN 
+
+![evento creato.png](assets/evento%20creato.png)
 
 
 

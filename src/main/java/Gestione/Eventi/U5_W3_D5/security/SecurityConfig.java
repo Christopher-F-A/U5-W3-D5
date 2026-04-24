@@ -19,7 +19,8 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                     .requestMatchers("/auth/**").permitAll()
-                    .requestMatchers(HttpMethod.POST, "/events/**").hasAnyRole("ORGANIZER", "ADMIN")
+                    .requestMatchers(HttpMethod.GET, "/events").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/events").hasAuthority("ROLE_ORGANIZER")
                     .anyRequest().authenticated()
             )
             .build();}

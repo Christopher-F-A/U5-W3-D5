@@ -16,21 +16,24 @@ public class U5W3D5Application {
 		SpringApplication.run(U5W3D5Application.class, args);
 	}
     @Component
-    public class DataInitializer implements CommandLineRunner {
+    public static class DataInitializer implements CommandLineRunner {
         @Autowired
         private AuthService authService;
 
+        //test creazione user
         @Override
         public void run(String... args) throws Exception {
             User testUser = new User();
             testUser.setUsername("testuser");
             testUser.setEmail("test@test.com");
             testUser.setPassword("test123");
-            testUser.setRole(Role.USER);
+            testUser.setRole(Role.ORGANIZER);
 
             authService.registerUser(testUser);
             System.out.println("UTENTE REGISTRATO E PASS CRIPTATA");
         }
+
+
     }
 
 }
